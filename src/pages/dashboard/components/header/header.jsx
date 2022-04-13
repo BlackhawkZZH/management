@@ -17,11 +17,11 @@ export const DashBoardHeader = () => {
                 })
         }
         getTemp();
-        const timer = setInterval(getTemp, 1000*60)
+        const timer = setInterval(getTemp, 1000)
 
-        // return () => {
-        //     clearInterval(timer)
-        // }
+        return () => {
+            clearInterval(timer)
+        }
     }, [])
 
     
