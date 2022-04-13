@@ -13,7 +13,7 @@ export const DashBoard = () => {
         <Sider className="left-sider">Sider</Sider>
         <Layout>
           <DashBoardHeader/>
-          <Content>Content</Content>
+          <Content>This is dashboard</Content>
           <Footer>Footer</Footer>
         </Layout>
     </Layout>

@@ -8,13 +8,16 @@ export const DashBoardHeader = () => {
     const [curTemp, setCurTemp] = useState();
 
     useEffect(() => {
-        const timer = setInterval(() => {
+
+        const getTemp = () => {
             axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
                 .then(response => {
                     setCurTemp(response.data.dataseries[0].temp2m)
                     console.log(15, response.data.dataseries[0].temp2m)
                 })
-        }, 1000)
+        }
+        getTemp();
+        const timer = setInterval(getTemp, 1000*60)
 
         // return () => {
         //     clearInterval(timer)
@@ -23,6 +26,6 @@ export const DashBoardHeader = () => {
 
     
     return (
-        <Header className="dashboard-header">{curTemp} C</Header>
+        <Header className="dashboard-header">{`${curTemp} ℃`}</Header>
     )
 }

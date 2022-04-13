@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from './logo.svg';
 import './App.less';
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { DashBoard } from './pages/dashboard/dashboard'
 import { Login } from './pages/login/login'
@@ -9,12 +9,12 @@ import { Login } from './pages/login/login'
 function App() {
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
-          <Route path='/' exact element={<DashBoard />} />
-            <Route path='test' element={<Login/>} />
+          <Route path="/" exact element={<DashBoard />} />
+            <Route path="login" element={<Login />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }
