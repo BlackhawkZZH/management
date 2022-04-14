@@ -12,8 +12,8 @@ export const LeftSider = () => {
     }
 
     return (
-        <Sider className="left-sider"><Menu onClick={handleClick} style={{ width: 200 }} mode="vertical">
-            <Menu.Item key="1" icon={<AppstoreOutlined />}>
+        <Sider className="left-sider"><Menu onClick={handleClick} mode="vertical">
+            <Menu.Item key="1" icon={<MailOutlined />}>
                 <Link to='/dashboard/users'></Link>
                 Users
             </Menu.Item>
@@ -31,7 +31,8 @@ export const LeftSider = () => {
                 <Menu.Item key="11">Option 11</Menu.Item>
                 <Menu.Item key="12">Option 12</Menu.Item>
             </SubMenu>
-        </Menu></Sider>
+            </Menu>
+        </Sider>
     )
 }
 

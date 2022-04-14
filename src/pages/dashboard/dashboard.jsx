@@ -6,7 +6,7 @@ import './dashboard.less'
 import { LeftSider } from "./components/leftsider/leftsider";
 import { MainContent } from "./components/content/content";
 
-const { Footer, Content } = Layout;
+const { Footer } = Layout;
 
 export const DashBoard = () => {
 
@@ -16,7 +16,7 @@ export const DashBoard = () => {
         <Layout>
           <DashBoardHeader/>
           <MainContent/>
-          <Footer>Footer</Footer>
+          <Footer className="dashboard-footer">Footer</Footer>
         </Layout>
     </Layout>
     )     
