@@ -13,7 +13,7 @@ export const DashBoardHeader = () => {
             axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
                 .then(response => {
                     setCurTemp(response.data.dataseries[0].temp2m)
-                    console.log(15, response.data.dataseries[0].temp2m)
+                    //console.log(15, response.data.dataseries[0].temp2m)
                 })
         }
         getTemp();

@@ -3,17 +3,19 @@ import { Layout } from 'antd';
 
 import { DashBoardHeader } from './components/header/header'
 import './dashboard.less'
+import { LeftSider } from "./components/leftsider/leftsider";
+import { MainContent } from "./components/content/content";
 
-const { Footer, Sider, Content } = Layout;
+const { Footer, Content } = Layout;
 
 export const DashBoard = () => {
 
     return(
     <Layout>
-        <Sider className="left-sider">Sider</Sider>
+        <LeftSider />
         <Layout>
           <DashBoardHeader/>
-          <Content>This is dashboard</Content>
+          <MainContent/>
           <Footer>Footer</Footer>
         </Layout>
     </Layout>
