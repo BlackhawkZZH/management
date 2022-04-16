@@ -24,6 +24,11 @@ export const Users = () => {
             key: 'last_name',
         },
         {
+            title: 'Address',
+            dataIndex: 'address',
+            key: 'address'
+        },
+        {
             title: 'IP Address',
             dataIndex: 'ip_address',
             key: 'ip_address',
@@ -32,6 +37,11 @@ export const Users = () => {
             title: 'Gender',
             key: 'gender',
             dataIndex: 'gender',
+        },
+        {
+            title: 'Email',
+            key: 'email',
+            dataIndex: 'email',
         }
          
       ];
