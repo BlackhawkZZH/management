@@ -16,7 +16,9 @@ export const DashBoard = () => {
         <Layout>
           <DashBoardHeader/>
           <MainContent/>
-          <Footer className="dashboard-footer">Footer</Footer>
+          <Footer>
+            <span>footer</span>
+          </Footer>
         </Layout>
     </Layout>
     )     

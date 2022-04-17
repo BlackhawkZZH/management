@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DashBoard } from './pages/dashboard/dashboard'
 import { Login } from './pages/login/login'
 import { Users } from './components/users/users'
+import {Goods} from './components/goods/goods'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<DashBoard />}>
             <Route path="/dashboard/users" element={<Users />} />
+            <Route path="/dashboard/goods" element={<Goods />} />
           </Route>
           <Route path='/' element={<Login />} />
         </Routes>

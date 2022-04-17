@@ -26,6 +26,6 @@ export const DashBoardHeader = () => {
 
     
     return (
-        <Header className="dashboard-header">{`${curTemp} ℃`}</Header>
+        <Header className="dashboard-header"><span>{`${curTemp} ℃`}</span></Header>
     )
 }
