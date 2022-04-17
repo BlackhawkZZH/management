@@ -1,10 +1,13 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
+import { useNavigate } from "react-router-dom";
 import './login.less'
 
 const LoginComponent = () => {
+    let nav = useNavigate()
     const onFinish = (values) => {
-        window.location.replace('/dashboard/welcome')
+        
+        nav('/dashboard/welcome')
         console.log('Success:', values);
     };
 
