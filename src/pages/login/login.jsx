@@ -4,7 +4,7 @@ import './login.less'
 
 const LoginComponent = () => {
     const onFinish = (values) => {
-        window.location.replace('/dashboard')
+        window.location.replace('/dashboard/welcome')
         console.log('Success:', values);
     };
 
