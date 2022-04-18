@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined} from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
 import './leftsider.less'
@@ -19,7 +19,7 @@ export const LeftSider = () => {
                 <Menu.Item key="0" icon={<MailOutlined />}>
                     <Link to='/dashboard/users'>Users</Link>
                 </Menu.Item>
-                <Menu.Item key="1" icon={<MailOutlined />}>
+                <Menu.Item key="1" icon={<AppstoreOutlined />}>
                     <Link to='/dashboard/goods'>Goods</Link>
                 </Menu.Item>
             </Menu>

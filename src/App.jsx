@@ -14,10 +14,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<DashBoard />}>
-            <Route path='/dashboard/welcome' element={<DefaultMsg />}></Route>
-            <Route path="/dashboard/users" element={<Users />} />
-            <Route path="/dashboard/goods" element={<Goods />} />
+          <Route path="dashboard" element={<DashBoard />}>
+            <Route path='welcome' element={<DefaultMsg />}></Route>
+            <Route path="users" element={<Users />} />
+            <Route path="goods" element={<Goods />} />
           </Route>
           <Route path='/' element={<Login />} />
         </Routes>

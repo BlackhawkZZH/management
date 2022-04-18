@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Table, Tag, Space } from 'antd';
+import { Table } from 'antd';
 import React, { useEffect, useState } from "react";
 import { Title } from '../../common/components/title/title'
 
