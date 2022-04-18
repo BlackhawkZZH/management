@@ -78,6 +78,10 @@ router.get('/goods', function(req, res) {
   res.json(goods)
 })
 
+router.get('/summary', function(req, res) {
+  res.json(summary)
+})
+
 router.get('/rooms/:roomId', function(req, res) {
   room = findRoom(req.params.roomId)
   if (room.error) {
