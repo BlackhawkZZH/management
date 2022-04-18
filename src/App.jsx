@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.less';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -14,10 +13,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<DashBoard />}>
-            <Route path='/dashboard/welcome' element={<DefaultMsg />}></Route>
-            <Route path="/dashboard/users" element={<Users />} />
-            <Route path="/dashboard/goods" element={<Goods />} />
+          <Route path="dashboard" element={<DashBoard />}>
+            <Route path='welcome' element={<DefaultMsg />} />
+            <Route path="users" element={<Users />} />
+            <Route path="goods" element={<Goods />} />
           </Route>
           <Route path='/' element={<Login />} />
         </Routes>
