@@ -2,14 +2,11 @@ import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from "react-router-dom";
 import './login.less'
-import { useDispatch } from "react-redux";
-import loginAciton from "../../actions/loginAction";
 
 const LoginComponent = () => {
-    const dispatch = useDispatch()
-    const nav = useNavigate()
+    let nav = useNavigate()
     const onFinish = (values) => {
-        dispatch(loginAciton())
+        
         nav('/dashboard/welcome')
         console.log('Success:', values);
     };

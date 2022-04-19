@@ -4,17 +4,16 @@ import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
-import { allReducers } from './reducers';
-import { legacy_createStore as createStore} from 'redux'
-import { Provider } from 'react-redux';
-
-const myStore = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <Provider store={myStore}>
       <App />
     </Provider>
+=======
+    <App />
+>>>>>>> parent of a11886a (add login route restriction)
   </React.StrictMode>,
   document.getElementById('root')
 );
