@@ -4,10 +4,18 @@ import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
+import { allReducers } from './reducers';
+import { legacy_createStore as createStore} from 'redux'
+import { Provider } from 'react-redux';
+
+const myStore = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={myStore}>
+      <App />
+    </Provider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
