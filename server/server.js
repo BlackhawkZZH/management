@@ -4,7 +4,6 @@ var bodyParser = require('body-parser')
 // var shortid = require('shortid')
 var users = require('./users.json')
 var goods = require('./goods.json')
-var summary = require('./summary.json')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -76,10 +75,6 @@ router.get('/users', function(req, res) {
 
 router.get('/goods', function(req, res) {
   res.json(goods)
-})
-
-router.get('/summary', function(req, res) {
-  res.json(summary)
 })
 
 router.get('/rooms/:roomId', function(req, res) {
