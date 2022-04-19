@@ -9,14 +9,11 @@ import { Login } from './pages/login/login'
 import { Users } from './components/users/users'
 import { Goods } from './components/goods/goods'
 
-<<<<<<< HEAD
+
 import './App.less';
 
+
 function App() {
-  const isLogged = useSelector(state => state.isLogged)
-=======
-function App() {
->>>>>>> parent of a11886a (add login route restriction)
   return (
     <div className="App">
       <BrowserRouter>

@@ -7,13 +7,7 @@ import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <React.StrictMode>
-<<<<<<< HEAD
-    <Provider store={myStore}>
-      <App />
-    </Provider>
-=======
     <App />
->>>>>>> parent of a11886a (add login route restriction)
   </React.StrictMode>,
   document.getElementById('root')
 );
