@@ -2,12 +2,21 @@ import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from "react-router-dom";
 import './login.less'
+import axios from "axios";
+import { connect } from "react-redux";
+import { getUserInfo } from "../../redux/actions/handlers/userActions";
 
-const LoginComponent = () => {
+
+const LoginComponent = (props) => {
+    console.log(10, props)
     let nav = useNavigate()
     const onFinish = (values) => {
-        
-        nav('/dashboard/welcome')
+        axios.post('http://localhost:8088/api/login', values).then(res => {
+            
+            props.passUserData(res.data.user)
+            nav('/dashboard/welcome')
+        })
+
         console.log('Success:', values);
     };
 
@@ -82,7 +91,7 @@ const LoginComponent = () => {
     );
 };
 
-export const Login = () => {
+const Login = () => {
     return (
         <div className="login">
             <div className="login-msg">Management System</div>
@@ -93,3 +102,14 @@ export const Login = () => {
 
 }
 
+const mapStateToProps = () => ({})
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        passUserData(user){
+            dispatch(getUserInfo(user))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent)

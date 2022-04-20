@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Layout } from 'antd';
 import './header.less'
 import axios from "axios";
+import { connect } from "react-redux";
 const { Header } = Layout;
 
-export const DashBoardHeader = () => {
+export const DashBoardHeader = (props) => {
     const [curTemp, setCurTemp] = useState();
 
     useEffect(() => {
@@ -26,6 +27,27 @@ export const DashBoardHeader = () => {
 
     
     return (
-        <Header className="dashboard-header"><span>{`${curTemp} ℃`}</span></Header>
+        <Header className="dashboard-header"><span>{`${curTemp} ℃`}{props.user.username}</span></Header>
     )
 }
+
+
+const mapStateToProps = (state) => {
+    console.log(36, state)
+    return {
+        user: state.user
+    }
+}
+// get data
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        
+        }
+    }
+//operate data
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashBoardHeader)
+
+//connect to redux
