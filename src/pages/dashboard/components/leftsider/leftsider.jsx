@@ -13,14 +13,14 @@ export const LeftSider = () => {
     return (
         <Sider className="left-sider">
             <div className="left-sider-title" onClick={() => window.location.reload(true)}>
-                <Link className="left-sider-title" to='/dashboard/welcome'>Management System</Link>
+                <Link className="left-sider-title" to='welcome'>Management System</Link>
             </div>
             <Menu mode="vertical" theme="dark">
                 <Menu.Item key="0" icon={<MailOutlined />}>
-                    <Link to='/dashboard/users'>Users</Link>
+                    <Link to='users'>Users</Link>
                 </Menu.Item>
                 <Menu.Item key="1" icon={<AppstoreOutlined />}>
-                    <Link to='/dashboard/goods'>Goods</Link>
+                    <Link to='goods'>Goods</Link>
                 </Menu.Item>
             </Menu>
         </Sider>

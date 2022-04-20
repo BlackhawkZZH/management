@@ -22,7 +22,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="dashboard" element={<DashBoard />}>
+            <Route element={<DashBoard />}>
               <Route path='welcome' element={<DefaultMsg />}></Route>
               <Route path="users" element={<Users />} />
               <Route path="goods" element={<Goods />} />

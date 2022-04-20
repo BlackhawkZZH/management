@@ -3,9 +3,13 @@ import { Layout } from 'antd';
 import './header.less'
 import axios from "axios";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const { Header } = Layout;
 
+
+
 export const DashBoardHeader = (props) => {
+    const nav = useNavigate()
     const [curTemp, setCurTemp] = useState();
 
     useEffect(() => {
@@ -27,7 +31,15 @@ export const DashBoardHeader = (props) => {
 
     
     return (
-        <Header className="dashboard-header"><span>{`${curTemp} ℃`}{props.user.username}</span></Header>
+        <Header className="dashboard-header">
+            <div className="dashboard-info">
+                <span>{`${curTemp} ℃`}</span> 
+            </div>
+            <div className="dashboard-usr-info">
+                <span>{`Welcome, ${props.user.username}！`}</span>
+                <a className="dashboard-usr-info-logout" onClick={() => {nav("../")}}>Logout</a>
+            </div>
+        </Header>
     )
 }
 

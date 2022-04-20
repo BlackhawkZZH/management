@@ -1,9 +1,37 @@
-.ant-layout-header{
-    &.dashboard-header{
+@import url('../../../../common/styles/colors.less');
+
+.ant-layout-header {
+    &.dashboard-header {
         padding: 0px;
-        background-color: aqua;
+        background-color: @theme_blue;
         display: flex;
+        text-align: center;
         justify-content: center;
+        align-items: center;
+        color: black;
+        flex-direction: row;
+        margin: 0px;
+
+        .dashboard-info {
+            width: 80vw;
+
+        }
+
+        .dashboard-usr-info {
+            display: flex;
+            width: 13vw;
+            margin-left: auto;
+            justify-content: right;
+            .dashboard-usr-info-logout{
+                
+                width: 3vw;
+                color: @theme_white;
+                text-decoration: underline;
+                &:hover{
+                    color: @theme_gray;
+                }
+            }
+        }
     }
-    
+
 }
