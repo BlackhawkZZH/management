@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const { Content } = Layout;
 
 export const MainContent = () => {
-    return (
-        <Content><Outlet /></Content>
-    )
+  return (
+    <Content><Outlet /></Content>
+  )
 }

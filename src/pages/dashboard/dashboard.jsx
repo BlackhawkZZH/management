@@ -9,18 +9,17 @@ import { MainContent } from "./components/content/content";
 const { Footer } = Layout;
 
 export const DashBoard = () => {
-
-    return(
+  return (
     <Layout>
-        <LeftSider />
-        <Layout>
-          <DashBoardHeader/>
-          <MainContent/>
-          <Footer>
-            <span>footer</span>
-          </Footer>
-        </Layout>
+      <LeftSider />
+      <Layout>
+        <DashBoardHeader />
+        <MainContent />
+        <Footer>
+          <span>footer</span>
+        </Footer>
+      </Layout>
     </Layout>
-    )     
-    
+  )
+
 }

@@ -9,54 +9,54 @@ const { Header } = Layout;
 
 
 export const DashBoardHeader = (props) => {
-    const nav = useNavigate()
-    const [curTemp, setCurTemp] = useState();
+  const nav = useNavigate()
+  const [curTemp, setCurTemp] = useState();
 
-    useEffect(() => {
+  useEffect(() => {
 
-        const getTemp = () => {
-            axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
-                .then(response => {
-                    setCurTemp(response.data.dataseries[0].temp2m)
-                    //console.log(15, response.data.dataseries[0].temp2m)
-                })
-        }
-        getTemp();
-        const timer = setInterval(getTemp, 1000)
+    const getTemp = () => {
+      axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
+        .then(response => {
+          setCurTemp(response.data.dataseries[0].temp2m)
+          //console.log(15, response.data.dataseries[0].temp2m)
+        })
+    }
+    getTemp();
+    const timer = setInterval(getTemp, 1000)
 
-        return () => {
-            clearInterval(timer)
-        }
-    }, [])
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
 
-    
-    return (
-        <Header className="dashboard-header">
-            <div className="dashboard-info">
-                <span>{`${curTemp} ℃`}</span> 
-            </div>
-            <div className="dashboard-usr-info">
-                <span>{`Welcome, ${props.user.username}！`}</span>
-                <a className="dashboard-usr-info-logout" onClick={() => {nav("../")}}>Logout</a>
-            </div>
-        </Header>
-    )
+
+  return (
+    <Header className="dashboard-header">
+      <div className="dashboard-info">
+        <span>{`${curTemp} ℃`}</span>
+      </div>
+      <div className="dashboard-usr-info">
+        <span>{`Welcome, ${props.user.username}！`}</span>
+        <a className="dashboard-usr-info-logout" onClick={() => { nav("../") }}>Logout</a>
+      </div>
+    </Header>
+  )
 }
 
 
 const mapStateToProps = (state) => {
-    console.log(36, state)
-    return {
-        user: state.user
-    }
+  console.log(36, state)
+  return {
+    user: state.user
+  }
 }
 // get data
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        
-        }
-    }
+  return {
+
+  }
+}
 //operate data
 
 
