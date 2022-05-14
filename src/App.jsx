@@ -22,12 +22,12 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route element={<DashBoard />}>
+            <Route path='dashboard' element={<DashBoard />}>
               <Route path='welcome' element={<DefaultMsg />}></Route>
               <Route path="users" element={<Users />} />
               <Route path="goods" element={<Goods />} />
             </Route>
-            <Route path='/' element={<Login />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>
       </Provider>

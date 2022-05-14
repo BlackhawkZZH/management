@@ -21,11 +21,13 @@ export const Goods = () => {
       title: 'Total',
       dataIndex: 'total',
       key: 'total',
+      sorter: (a,b) => b.total - a.total
     },
     {
       title: 'Sold',
       dataIndex: 'sold',
-      key: 'sold'
+      key: 'sold',
+      sorter: (a,b) => b.sold - a.sold
     },
     {
       title: 'Left',

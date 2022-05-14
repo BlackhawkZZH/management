@@ -4,7 +4,9 @@ import './header.less'
 import axios from "axios";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getUserInfo } from "../../../../redux/actions/handlers/userActions";
 const { Header } = Layout;
+
 
 
 
@@ -29,6 +31,10 @@ export const DashBoardHeader = (props) => {
     }
   }, [])
 
+  const logoutHandeler = () => {
+    props.killUserData(null)
+    nav('../')
+  }
 
   return (
     <Header className="dashboard-header">
@@ -37,7 +43,7 @@ export const DashBoardHeader = (props) => {
       </div>
       <div className="dashboard-usr-info">
         <span>{`Welcome, ${props.user.username}！`}</span>
-        <a className="dashboard-usr-info-logout" onClick={() => { nav("../") }}>Logout</a>
+        <button className="dashboard-usr-info-logout" onClick={logoutHandeler}>Logout</button>
       </div>
     </Header>
   )
@@ -54,7 +60,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    killUserData: (user) => {
+      dispatch(getUserInfo(user))
+    }
   }
 }
 //operate data

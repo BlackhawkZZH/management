@@ -2,22 +2,16 @@ import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from "react-router-dom";
 import './login.less'
-import axios from "axios";
 import { connect } from "react-redux";
-import { getUserInfo } from "../../redux/actions/handlers/userActions";
+import { login } from "../../redux/actions/handlers/userActions";
 
 
 const LoginComponent = (props) => {
   console.log(10, props)
   let nav = useNavigate()
   const onFinish = (values) => {
-    axios.post('http://localhost:8088/api/login', values).then(res => {
-
-      props.passUserData(res.data.user)
-      nav('welcome')
-    })
-
-    console.log('Success:', values);
+    props.passUserData(values)
+    nav('/dashboard/welcome')
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -111,7 +105,7 @@ const mapStateToProps = () => ({})
 const mapDispatchToProps = (dispatch) => {
   return {
     passUserData(user) {
-      dispatch(getUserInfo(user))
+      dispatch(login(user))
     }
   }
 }
