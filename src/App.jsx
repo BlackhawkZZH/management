@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { DashBoard } from './pages/dashboard/dashboard'
-import { DefaultMsg } from './components/defaultmsg/defaultmsg';
+import { Summary } from './components/summary/summary';
 import Login from './pages/login/login'
 import { Users } from './components/users/users'
 import { Goods } from './components/goods/goods'
@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='dashboard' element={<DashBoard />}>
-              <Route path='welcome' element={<DefaultMsg />}></Route>
+              <Route path='welcome' element={<Summary />}></Route>
               <Route path="users" element={<Users />} />
               <Route path="goods" element={<Goods />} />
             </Route>

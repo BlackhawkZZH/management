@@ -2,15 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Title } from "../../common/components/title/title";
 import { Line } from '@ant-design/plots';
-import './defaultmsg.less'
+import './summary.less'
 
 
 
-export const DefaultMsg = () => {
+export const Summary = () => {
   const [data, setData] = useState(null)
   useEffect(() => {
     axios('http://localhost:8088/api/summary').then(res => {
-      console.log(res.data)
+      console.log(13,res.data)
       setData(res.data)
     })
   }, [])
@@ -20,11 +20,11 @@ export const DefaultMsg = () => {
     xField: 'day',
     yField: 'amount',
     seriesField: 'type',
-    // X 轴相关配置
+    // X axis setting
     xAxis: {
       nice: true,
       // tickCount: 8,
-      // 文本标签
+      // text label
       label: {
         // autoRotate: false,
         rotate: Math.PI / 6,
@@ -36,7 +36,7 @@ export const DefaultMsg = () => {
         formatter: (day) => day,
       },
       title: {
-        text: 'Week',
+        text: 'DAY',
         style: {
           fontSize: 16,
         },
@@ -78,7 +78,7 @@ export const DefaultMsg = () => {
         formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
       },
       title: {
-        text: '排放量(顿)',
+        text: 'AMOUNT',
         style: {
           fontSize: 16,
         },
@@ -135,52 +135,29 @@ export const DefaultMsg = () => {
       },
     },
     annotations: [
-      // 辅助线
-      {
-        type: 'line',
-        start: ['0%', '10%'],
-        end: ['100%', '10%'],
-        top: true,
-        style: {
-          stroke: 'l(0) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
-          lineWidth: 2,
-        },
-      }, // 辅助区域
+      // chart title area
       {
         type: 'region',
         start: ['0%', '0%'],
-        end: ['20%', '10%'],
+        end: ['30%', '10%'],
         top: true,
         style: {
           fill: '#1890ff',
           fillOpacity: 1,
           opacity: 1,
         },
-      }, // 辅助文本
+      }, // chart title
       {
         type: 'text',
-        position: ['10%', '5%'],
-        content: '二氧化碳排放量来源',
+        position: ['15%', '5%'],
+        content: 'Weekly Income and Expenditure Statement',
         style: {
           fill: '#fff',
-          fontSize: 12,
+          fontSize: 15,
           textAlign: 'center',
           textBaseline: 'middle',
-          shadowColor: '#fff',
-          shadowOffsetX: 12,
-          shadowOffsetY: 12,
-          shadowBlur: 2,
         },
-      }, // 辅助线
-      {
-        type: 'line',
-        start: ['min', 'median'],
-        end: ['max', 'median'],
-        style: {
-          stroke: 'Turquoise',
-          lineDash: [4, 2],
-        },
-      },
+      }
     ],
     legend: {
       position: 'top-right',
@@ -214,9 +191,9 @@ export const DefaultMsg = () => {
           )
         })}
       </div>
+      <Title text="Weekly chart"/>
       <div className="weekly-container">
-        <Title text="Weekly chart"/>
-        <Line {...config} />
+        <Line className="weekly" {...config} />
       </div>
     </div>
   )
