@@ -41,7 +41,7 @@ export const Summary = () => {
           fontSize: 16,
         },
       },
-      // 坐标轴线的配置项 null 表示不展示
+      // axis setting 'null' means not display
       line: {
         style: {
           stroke: '#aaa',
@@ -64,17 +64,16 @@ export const Summary = () => {
         alternateColor: 'rgba(0,0,0,0.05)',
       },
     },
-    // Y 轴相关配置
+    // Y axis settings
     yAxis: {
-      // max: 3000,
-      // 文本标签
+      // max: 3000
       label: {
         autoRotate: false,
         style: {
           fill: '#aaa',
           fontSize: 12,
         },
-        // 数值格式化为千分位
+        // value formating
         formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
       },
       title: {
@@ -83,7 +82,6 @@ export const Summary = () => {
           fontSize: 16,
         },
       },
-      // 坐标轴线的配置项 null 表示不展示
       line: {
         style: {
           stroke: '#aaa',
@@ -113,7 +111,7 @@ export const Summary = () => {
           type: 'hide-overlap',
         },
       ],
-      // 隐藏重叠label
+      // hide overlapping label
       style: {
         textAlign: 'right',
       },
@@ -166,15 +164,8 @@ export const Summary = () => {
           fill: '#000',
         },
         formatter: (name) => name,
-      },
-    },
-    // 度量相关配置
-    meta: {
-      // year 对应 xField || yField
-      year: {
-        range: [0, 1],
-      },
-    },
+      }
+    }
   };
 
   return (

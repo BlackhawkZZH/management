@@ -1,6 +1,4 @@
 import React from 'react'
-
-import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { DashBoard } from './pages/dashboard/dashboard'
