@@ -23,7 +23,7 @@ export const DashBoard = (props) => {
         <DashBoardHeader />
         <MainContent />
         <Footer>
-          <span>footer</span>
+          <span>This is footer and you can put some text in there.</span>
         </Footer>
       </Layout>
     </Layout>

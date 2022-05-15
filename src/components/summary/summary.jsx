@@ -215,6 +215,7 @@ export const Summary = () => {
       <div className="yearly-container">
         <Column className="yearly" {...groupColumnConfig} />
       </div>
+      <div className="placeholder"></div>
     </div>
   )
 }
