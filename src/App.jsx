@@ -11,6 +11,7 @@ import store from '../src/redux/store/index';
 
 
 import './App.less';
+import { Start } from './pages/start/start';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path='dashboard' element={<DashBoard />}>
+            <Route path='/' element={<Start/>}></Route>
+            <Route path='/dashboard' element={<DashBoard />}>
               <Route path='welcome' element={<Summary />}></Route>
               <Route path="users" element={<Users />} />
               <Route path="goods" element={<Goods />} />
