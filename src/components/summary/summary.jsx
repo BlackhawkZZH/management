@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Title } from "../../common/components/title/title";
-import { Line } from '@ant-design/plots';
+import { Line, Column } from '@ant-design/plots';
 import './summary.less'
 
 
@@ -10,12 +10,12 @@ export const Summary = () => {
   const [data, setData] = useState(null)
   useEffect(() => {
     axios('http://localhost:8088/api/summary').then(res => {
-      console.log(13,res.data)
+      console.log(13, res.data)
       setData(res.data)
     })
   }, [])
 
-  const config = {
+  const linePlotConfig = {
     data: data?.weekly || [],
     xField: 'day',
     yField: 'amount',
@@ -168,6 +168,31 @@ export const Summary = () => {
     }
   };
 
+  const groupColumnConfig = {
+    data: data?.yearly || [],
+    isGroup: true,
+    xField: 'month',
+    yField: 'amount',
+    seriesField: 'type',
+    //color: ['#1ca9e6', '#f88c24'],
+    // marginRatio: 0.1,
+    label: {
+      position: 'middle',
+      // 'top', 'middle', 'bottom'
+      layout: [
+        {
+          type: 'interval-adjust-position',
+        },
+        {
+          type: 'interval-hide-overlap',
+        },
+        {
+          type: 'adjust-color',
+        },
+      ],
+    },
+  };
+
   return (
     <div>
       <Title text='Summary' />
@@ -182,9 +207,13 @@ export const Summary = () => {
           )
         })}
       </div>
-      <Title text="Weekly chart"/>
+      <Title text="Weekly Chart" />
       <div className="weekly-container">
-        <Line className="weekly" {...config} />
+        <Line className="weekly" {...linePlotConfig} />
+      </div>
+      <Title text='Yearly Chart' />
+      <div className="yearly-container">
+        <Column className="yearly" {...groupColumnConfig} />
       </div>
     </div>
   )
