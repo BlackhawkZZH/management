@@ -31,6 +31,11 @@ export const DashBoardHeader = (props) => {
     }
   }, [])
 
+
+  useEffect(()=>{
+    if (props.user?.username === undefined) nav('../login')
+  },[props.user?.username])
+
   const logoutHandeler = () => {
     props.killUserData(null)
     nav('../')
@@ -51,7 +56,7 @@ export const DashBoardHeader = (props) => {
 
 
 const mapStateToProps = (state) => {
-  console.log(36, state)
+  console.log(54, state)
   return {
     user: state.user
   }

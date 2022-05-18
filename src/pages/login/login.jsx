@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from "react-router-dom";
 import './login.less'
@@ -7,12 +7,16 @@ import { login } from "../../redux/actions/handlers/userActions";
 
 
 const LoginComponent = (props) => {
-  console.log(10, props)
   let nav = useNavigate()
   const onFinish = (values) => {
     props.passUserData(values)
-    nav('/dashboard/welcome')
+    
+    
   };
+
+  useEffect(()=>{
+    if(props.userInfo?.username) nav('/dashboard/welcome')
+  },[props.userInfo?.username])
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -100,7 +104,9 @@ const Login = () => {
 
 }
 
-const mapStateToProps = () => ({})
+const mapStateToProps = (state) => ({
+  userInfo: state.user
+})
 
 const mapDispatchToProps = (dispatch) => {
   return {

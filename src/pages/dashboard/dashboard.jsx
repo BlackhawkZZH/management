@@ -11,10 +11,7 @@ const { Footer } = Layout;
 
 export const DashBoard = (props) => {
   const nav = useNavigate()
-  console.log('hellodash')
-  // useEffect(()=>{
-  //   if (!props.user) nav('/login')
-  // },[])
+  
 
   return (
     <Layout>

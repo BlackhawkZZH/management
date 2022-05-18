@@ -12,7 +12,7 @@ export const LeftSider = () => {
 
   return (
     <Sider className="left-sider">
-      <div className="left-sider-title" onClick={() => window.location.reload(true)}>
+      <div className="left-sider-title">
         <Link className="left-sider-title" to='welcome'>Management System</Link>
       </div>
       <Menu mode="vertical" theme="dark">

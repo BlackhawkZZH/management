@@ -21,7 +21,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Start/>}></Route>
+            {/* <Route path='/' element={<Start/>}></Route> */}
             <Route path='/dashboard' element={<DashBoard />}>
               <Route path='welcome' element={<Summary />}></Route>
               <Route path="users" element={<Users />} />
