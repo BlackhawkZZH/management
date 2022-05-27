@@ -38,7 +38,7 @@ export const DashBoardHeader = (props) => {
 
   const logoutHandeler = () => {
     props.killUserData(null)
-    nav('../')
+    nav('../login')
   }
 
   return (
