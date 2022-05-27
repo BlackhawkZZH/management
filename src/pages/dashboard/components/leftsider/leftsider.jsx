@@ -12,14 +12,16 @@ export const LeftSider = () => {
 
   return (
     <Sider className="left-sider">
-      <div className="left-sider-title">
-        <Link className="left-sider-title" to='welcome'>Management System</Link>
-      </div>
+      
       <Menu mode="vertical" theme="dark">
-        <Menu.Item key="0" icon={<MailOutlined />}>
+      <Menu.Item key="0">
+      <Link className="left-sider-title" to='welcome'>Management System</Link>
+        </Menu.Item>
+        
+        <Menu.Item key="1" icon={<MailOutlined />}>
           <Link to='users'>Users</Link>
         </Menu.Item>
-        <Menu.Item key="1" icon={<AppstoreOutlined />}>
+        <Menu.Item key="2" icon={<AppstoreOutlined />}>
           <Link to='goods'>Goods</Link>
         </Menu.Item>
       </Menu>
