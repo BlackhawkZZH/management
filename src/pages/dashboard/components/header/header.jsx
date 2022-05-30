@@ -32,9 +32,9 @@ export const DashBoardHeader = (props) => {
   }, [])
 
 
-  useEffect(()=>{
-    if (props.user?.username === undefined) nav('../login')
-  },[props.user?.username])
+  // useEffect(()=>{
+  //   if (props.user?.username === undefined) nav('../login')
+  // },[props.user?.username])
 
   const logoutHandeler = () => {
     props.killUserData(null)
@@ -47,7 +47,7 @@ export const DashBoardHeader = (props) => {
         <span>{`${curTemp} ℃`}</span>
       </div>
       <div className="dashboard-usr-info">
-        <span>{`Welcome, ${props.user.username}！`}</span>
+        <span>{`Welcome, ${props.user?.username}！`}</span>
         <button className="dashboard-usr-info-logout" onClick={logoutHandeler}>Logout</button>
       </div>
     </Header>

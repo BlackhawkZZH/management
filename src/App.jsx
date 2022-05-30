@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { DashBoard } from './pages/dashboard/dashboard'
+import DashBoard from './pages/dashboard/dashboard'
 import { Summary } from './components/summary/summary';
 import Login from './pages/login/login'
 import { Users } from './components/users/users'

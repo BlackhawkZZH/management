@@ -6,12 +6,14 @@ import './dashboard.less'
 import { LeftSider } from "./components/leftsider/leftsider";
 import { MainContent } from "./components/content/content";
 import { connect } from "react-redux";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const { Footer } = Layout;
 
-export const DashBoard = (props) => {
+const DashBoard = (props) => {
   const nav = useNavigate()
-  
+  useEffect(() => {
+    if (props.user?.username === undefined) nav('../login')
+  }, [props.user?.username])
 
   return (
     <Layout>
