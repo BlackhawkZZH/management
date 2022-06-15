@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import './login.less'
 import { connect } from "react-redux";
 import { login } from "../../redux/actions/handlers/userActions";
+import { Counter } from "../../common/components/counter/counter";
+import ErrorBoundary from "../../common/components/errorboundary/errorboundary";
 
 
 const LoginComponent = (props) => {
@@ -25,6 +27,10 @@ const LoginComponent = (props) => {
   return (
     <div className="login">
       <div className="login-msg">Management System</div>
+      <ErrorBoundary>
+        <Counter />
+      </ErrorBoundary>
+      
       <div className="login-space"></div>
       <Form
         name="basic"
