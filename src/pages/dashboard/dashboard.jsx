@@ -25,10 +25,7 @@ const DashBoard = (props) => {
         <MainContent />
         <Footer>
           <Suspense fallback = {<span>This is footer and you can put some text in there.</span>}>
-            <ErrorBoundary>
-              <Title text = {'nihao'} />
-            </ErrorBoundary>
-            
+            <Title text = {'nihao'} />
           </Suspense>
           
           
