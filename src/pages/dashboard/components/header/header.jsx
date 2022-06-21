@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Layout } from 'antd';
-import './header.less'
-import axios from "axios";
-import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios";
+import { Layout } from 'antd';
+
+
 import { getUserInfo } from "../../../../redux/actions/handlers/userActions";
+
+import './header.less'
+
+
 const { Header } = Layout;
-
-
-
 
 export const DashBoardHeader = (props) => {
   const nav = useNavigate()
   const [curTemp, setCurTemp] = useState();
 
   useEffect(() => {
-
     const getTemp = () => {
       axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json')
         .then(response => {
           setCurTemp(response.data.dataseries[0].temp2m)
-          //console.log(15, response.data.dataseries[0].temp2m)
         })
     }
     getTemp();
@@ -30,11 +30,6 @@ export const DashBoardHeader = (props) => {
       clearInterval(timer)
     }
   }, [])
-
-
-  // useEffect(()=>{
-  //   if (props.user?.username === undefined) nav('../login')
-  // },[props.user?.username])
 
   const logoutHandeler = () => {
     props.killUserData(null)
@@ -54,9 +49,7 @@ export const DashBoardHeader = (props) => {
   )
 }
 
-
 const mapStateToProps = (state) => {
-  console.log(54, state)
   return {
     user: state.user
   }
@@ -72,7 +65,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 //operate data
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(DashBoardHeader)
-
 //connect to redux

@@ -1,7 +1,10 @@
 import axios from "axios";
 import { Table } from 'antd';
 import React, { useEffect, useState } from "react";
+
+
 import { Title } from '../../common/components/title/title'
+
 
 export const Goods = () => {
   const [goods, setGoods] = useState()
@@ -21,13 +24,13 @@ export const Goods = () => {
       title: 'Total',
       dataIndex: 'total',
       key: 'total',
-      sorter: (a,b) => b.total - a.total
+      sorter: (a, b) => b.total - a.total
     },
     {
       title: 'Sold',
       dataIndex: 'sold',
       key: 'sold',
-      sorter: (a,b) => b.sold - a.sold
+      sorter: (a, b) => b.sold - a.sold
     },
     {
       title: 'Left',

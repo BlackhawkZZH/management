@@ -1,16 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Title } from "../../common/components/title/title";
 import { Line, Column } from '@ant-design/plots';
-import './summary.less'
 
+
+import { Title } from "../../common/components/title/title";
+
+import './summary.less'
 
 
 export const Summary = () => {
   const [data, setData] = useState(null)
   useEffect(() => {
     axios('http://localhost:8088/api/summary').then(res => {
-      console.log(13, res.data)
       setData(res.data)
     })
   }, [])

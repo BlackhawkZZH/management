@@ -1,7 +1,10 @@
 import axios from "axios";
 import { Table } from 'antd';
 import React, { useEffect, useState } from "react";
+
+
 import { Title } from '../../common/components/title/title'
+
 
 export const Users = () => {
   const [users, setUsers] = useState()
@@ -43,9 +46,7 @@ export const Users = () => {
       key: 'email',
       dataIndex: 'email',
     }
-
   ];
-
 
   return (
     <div>

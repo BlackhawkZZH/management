@@ -1,24 +1,25 @@
 import React, { useEffect } from "react";
-import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from "react-router-dom";
-import './login.less'
 import { connect } from "react-redux";
+import { Form, Input, Button, Checkbox } from 'antd';
+
+
 import { login } from "../../redux/actions/handlers/userActions";
 import { Counter } from "../../common/components/counter/counter";
 import ErrorBoundary from "../../common/components/errorboundary/errorboundary";
+
+import './login.less'
 
 
 const LoginComponent = (props) => {
   let nav = useNavigate()
   const onFinish = (values) => {
     props.passUserData(values)
-    
-    
   };
 
-  useEffect(()=>{
-    if(props.userInfo?.username) nav('/dashboard/welcome')
-  },[props.userInfo?.username])
+  useEffect(() => {
+    if (props.userInfo?.username) nav('/dashboard/welcome')
+  }, [props.userInfo?.username])
 
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
@@ -27,10 +28,11 @@ const LoginComponent = (props) => {
   return (
     <div className="login">
       <div className="login-msg">Management System</div>
+
       <ErrorBoundary>
         <Counter />
       </ErrorBoundary>
-      
+
       <div className="login-space"></div>
       <Form
         name="basic"
@@ -103,7 +105,6 @@ const LoginComponent = (props) => {
 const Login = () => {
   return (
     <div className="login">
-
       <LoginComponent />
     </div>
   )
