@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 import './leftsider.less'
 
-const { SubMenu } = Menu;
 const { Sider } = Layout
 
 export const LeftSider = () => {
