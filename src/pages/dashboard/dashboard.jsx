@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
 // get data
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {}
 }
 //operate data
 

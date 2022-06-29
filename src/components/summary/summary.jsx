@@ -201,7 +201,7 @@ export const Summary = () => {
         {data?.cards?.map((card, idx) => {
           return (
             <div className="card" key={idx}>
-              <Title text={card.title} />
+              <h4>{card.title}</h4>
               <div className="amount">{card.amount}</div>
               <div className="money">{card.money}</div>
             </div>

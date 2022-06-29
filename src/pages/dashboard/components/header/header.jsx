@@ -40,6 +40,7 @@ export const DashBoardHeader = (props) => {
     <Header className="dashboard-header">
       <div className="dashboard-info">
         <span>{`${curTemp} ℃`}</span>
+        <span>This is header and you can put some text in here.</span>
       </div>
       <div className="dashboard-usr-info">
         <span>{`Welcome, ${props.user?.username}！`}</span>
